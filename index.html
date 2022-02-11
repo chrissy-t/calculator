@@ -24,9 +24,35 @@
 </head>
 
 <body>
-    <form onsubmit="return doSomething();" class="my-form">
-        <input type="submit" value="Submit" />
-    </form>
+    
+  <form id="form" onsubmit="return calc();">
+    First Number: <br>
+    <input type="text" name="firstnum" id="firstnum"><br>
   
-  <script src="js/scripts.js"></script>
+    <div>
+      <input type="radio" value="+" name="operator" id="plus">
+      <label for="plus">+</label>
+    </div>
+    <div>
+      <input type="radio" value="-" name="operator" id="minus">
+      <label for="minus">-</label>
+    </div>
+    <div>
+      <input type="radio" value="/" name="operator" id="divide">
+      <label for="divide">&divide</label>
+    </div>
+    <div>
+      <input type="radio" value="*" name="operator" id="times">
+      <label for="times">&times</label>
+    </div>
+  
+    Second Number:<br>
+    <div>
+    <input type="text" name="secondnum" id="secondnum"><br>
+    <input type="submit" value="Submit" id="submit"><br>
+    Output: <span id="ans"> </span>
+    </div>
+  </form>
+  <script src="script.js"></script>
+  
 </body>
