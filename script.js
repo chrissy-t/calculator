@@ -7,7 +7,50 @@ There should be submit button that would trigger a calculate function.
   Use conditions in your JavaScript to check that the operands are both positive numbers and provide an appropriate message otherwise in the result.
  Finally, use a switch statement to carry out the appropriate operation based on the ‘value’ of the radio button */
 
-function doSomething() {
-    alert('Form submitted!');
-    return false;
-}
+ const submit = document.querySelector('#submit')
+ const firstnum = document.querySelector('#first-number')
+ const secondnum = document.querySelector('#second-number')
+ const ans = document.querySelector('#ans')
+ 
+ 
+ //submit.addEventListener('submit', e => {
+ //  e.preventDefault()
+ 
+ function calc() {
+   const operator = document.querySelector('input[name="operator"]:checked')
+   console.log("op: " + operator)
+   var numOne = parseInt(firstnum.value)
+   var numTwo = parseInt(secondnum.value)
+ 
+   if (numOne < 0 || numTwo < 0) {
+ 
+     alert("Number must be positive")
+   } else {
+     var answer;
+     switch (operator) {
+       case "+":
+         answer = numOne + numTwo
+         ans.textContent = answer
+         //lastCalc.textContent = 
+         break;
+       case "-":
+         answer = numOne - numTwo
+         ans.textContent = answer
+         break;
+ 
+       case "/":
+         answer = numOne / numTwo
+         ans.textContent = answer
+         break;
+       case "*":
+         answer = numOne * numTwo
+         ans.textContent = answer
+         break;
+ 
+     }
+     console.log("an: " + answer)
+   }
+ 
+ }
+ //);
+ 
